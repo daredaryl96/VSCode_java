@@ -51,7 +51,8 @@ public class Login {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = name.getText();
-                String password = pass.getText();
+                char[] passtemp1 = pass.getPassword();
+                String password = new String(passtemp1);
                 if (username.isEmpty() || password.isEmpty()) {
                     JOptionPane.showMessageDialog(frame, "Please Enter All Details!!!", "Warning Message",
                             JOptionPane.WARNING_MESSAGE);
@@ -73,6 +74,9 @@ public class Login {
                         try {
                             mainPage.mainPageView(id);
                         } catch (SQLException e1) {
+                            e1.printStackTrace();
+                        } catch (Exception e1) {
+                            // TODO Auto-generated catch block
                             e1.printStackTrace();
                         }
                         frame.dispose();

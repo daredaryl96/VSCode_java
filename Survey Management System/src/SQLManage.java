@@ -1,4 +1,3 @@
-package survey;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -44,7 +43,7 @@ public class SQLManage {
         stm.executeUpdate(str);
     }
 
-    public void userQuestion(int id, String surveyCode) throws SQLException {
+    public void userQuestionAdd(int id, String surveycode) throws SQLException {
         String str = "INSERT INTO userQuestions values (" + id + ", " + surveycode + ", 0)";
         Statement stm = con.createStatement();
         stm.executeUpdate(str);
@@ -61,7 +60,7 @@ public class SQLManage {
         String str = "SELECT * FROM questions WHERE surveycode = " + surveycode + "";
         Statement stm = con.createStatement();
         ResultSet rst = stm.executeQuery(str);
-        stm.executeUpdate(str);
+        return rst;
     }
 
     public ResultSet surveys(int id, String search) throws SQLException {

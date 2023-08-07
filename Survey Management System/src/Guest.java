@@ -1,4 +1,3 @@
-package survey;
 
 import java.awt.Button;
 import java.awt.Font;
