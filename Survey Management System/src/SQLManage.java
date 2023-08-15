@@ -9,9 +9,9 @@ public class SQLManage {
     Connection con;
 
     public SQLManage() throws SQLException {
-        String url = "xxxxx";
+        String url = "XXXXX";
         String usr = "root";
-        String pass = "aergoiag";
+        String pass = "XXXX";
         con = DriverManager.getConnection(url, usr, pass);
     }
 
@@ -52,7 +52,6 @@ public class SQLManage {
     public void answerUpdt(String surveycode, int qno, int option) throws SQLException {
         String str = "INSERT INTO surveyquestions values (" + surveycode + ", " + qno + ", " + option + ")";
         Statement stm = con.createStatement();
-        ResultSet rst = stm.executeQuery(str);
         stm.executeUpdate(str);
     }
 
